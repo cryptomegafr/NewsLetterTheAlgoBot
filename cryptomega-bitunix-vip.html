@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accès VIP Bitunix — Newsletter TheAlgoBot par CRYPTOMEGA</title>
+<meta name="description" content="Inscris-toi via notre lien partenaire Bitunix, active ton compte, puis envoie ton email et ton UID pour recevoir la newsletter quotidienne TheAlgoBot : macro, funding, liquidations, niveaux techniques et pari du jour." />
+<meta property="og:title" content="Accès VIP Bitunix — Newsletter TheAlgoBot par CRYPTOMEGA" />
+<meta property="og:description" content="La newsletter quotidienne crypto réservée aux affiliés Bitunix de CRYPTOMEGA." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:           #0a0805;
+    --bg-elev:      #110d07;
+    --bg-card:      #1a1409;
+    --ink:          #f5ead0;
+    --ink-soft:     #b8a87d;
+    --ink-mute:     #6e6147;
+    --gold:         #d4af37;
+    --gold-bright:  #f0c850;
+    --gold-deep:    #8a6f1a;
+    --line:         rgba(212, 175, 55, 0.18);
+    --line-strong:  rgba(212, 175, 55, 0.4);
+    --shadow-gold:  0 20px 60px -20px rgba(212, 175, 55, 0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 800px 600px at 15% -10%, rgba(212, 175, 55, 0.08), transparent 60%),
+      radial-gradient(ellipse 1000px 800px at 100% 50%, rgba(212, 175, 55, 0.04), transparent 70%),
+      radial-gradient(ellipse 600px 500px at 50% 110%, rgba(212, 175, 55, 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* Subtle grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.83 0 0 0 0 0.69 0 0 0 0 0.22 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .display { font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: -0.02em; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== NAV ====== */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(10, 8, 5, 0.75);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .brand-mark {
+    width: 32px; height: 32px;
+    display: grid; place-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    transform: rotate(45deg);
+  }
+  .brand-mark span { transform: rotate(-45deg); }
+  .brand-name { color: var(--gold); }
+  .brand-sub { color: var(--ink-mute); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; font-family: 'Manrope', sans-serif; font-weight: 500; }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 22px;
+    background: var(--gold);
+    color: #0a0805;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    transition: all 0.3s;
+    border: 1px solid var(--gold);
+  }
+  .nav-cta:hover {
+    background: var(--gold-bright);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    position: relative;
+    padding: 100px 32px 80px;
+    max-width: 1280px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--gold);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1.0;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .hero h1 .gold-line {
+    display: block;
+    background: linear-gradient(90deg, var(--gold-bright), var(--gold-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p.lede {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+  .hero-bullets {
+    list-style: none;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hero-bullets li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .hero-bullets li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  .hero-bullets strong { color: var(--gold); font-weight: 600; }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--gold);
+    color: #0a0805;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    transition: all 0.3s;
+    border: 1px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::after {
+    content: '→';
+    transition: transform 0.3s;
+  }
+  .btn-primary:hover {
+    background: var(--gold-bright);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.35);
+  }
+  .btn-primary:hover::after {
+    transform: translateX(4px);
+  }
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: transparent;
+    color: var(--gold);
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid var(--line-strong);
+    transition: all 0.3s;
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.05);
+  }
+
+  .hero-fine {
+    margin-top: 28px;
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  /* ====== HERO VISUAL — fake newsletter preview ====== */
+  .hero-visual {
+    position: relative;
+  }
+  .preview-card {
+    background: linear-gradient(155deg, #15100a 0%, #0e0a05 100%);
+    border: 1px solid var(--line-strong);
+    padding: 28px;
+    position: relative;
+    box-shadow: var(--shadow-gold), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+    transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+    transform-style: preserve-3d;
+  }
+  .preview-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, var(--gold) 0%, transparent 30%, transparent 70%, var(--gold-deep) 100%);
+    z-index: -1;
+    opacity: 0.4;
+  }
+  .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .preview-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .preview-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.15em;
+  }
+  .preview-section {
+    margin-bottom: 18px;
+  }
+  .preview-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .preview-label::before {
+    content: '';
+    width: 16px; height: 1px;
+    background: var(--gold);
+  }
+  .preview-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    border-bottom: 1px dashed rgba(212, 175, 55, 0.08);
+  }
+  .preview-row span:first-child { color: var(--ink-soft); }
+  .preview-row .neg { color: #e57373; }
+  .preview-row .pos { color: #81c784; }
+  .preview-row .neutral { color: var(--ink); }
+  .preview-bet {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(212, 175, 55, 0.06);
+    border-left: 2px solid var(--gold);
+  }
+  .preview-bet-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+  }
+  .preview-bet-text {
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  /* ====== SECTIONS ====== */
+  section { position: relative; z-index: 2; }
+  .section-head {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px 48px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+  }
+  .section-title em { color: var(--gold); font-style: italic; font-weight: 400; }
+  .section-sub {
+    margin-top: 20px;
+    color: var(--ink-soft);
+    font-size: 17px;
+    max-width: 640px;
+  }
+
+  /* ====== STEPS ====== */
+  .steps {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+  .steps-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 36px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    transition: all 0.4s;
+  }
+  .step:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-4px);
+  }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    color: var(--gold);
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 20px;
+    opacity: 0.4;
+  }
+  .step h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .step p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .step-link {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    transition: gap 0.3s;
+    display: inline-flex;
+    gap: 6px;
+  }
+  .step-link:hover { gap: 10px; }
+
+  /* ====== INSIDE NEWSLETTER (features) ====== */
+  .features {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+  .features-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .feature {
+    background: var(--bg);
+    padding: 40px 32px;
+    transition: background 0.4s;
+  }
+  .feature:hover { background: var(--bg-card); }
+  .feature-icon {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+  }
+  .feature h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .feature p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ====== FORM ====== */
+  .form-section {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-elev) 100%);
+  }
+  .form-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: center;
+  }
+  .form-wrap .section-title { margin: 0 auto; }
+  .form-wrap .section-sub { margin: 20px auto 0; }
+  .form-container {
+    margin-top: 56px;
+    background: var(--bg-card);
+    border: 1px solid var(--line-strong);
+    padding: 8px;
+    box-shadow: var(--shadow-gold);
+    position: relative;
+  }
+  .form-container::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, transparent 0%, var(--gold) 50%, transparent 100%);
+    z-index: -1;
+    opacity: 0.3;
+  }
+  .form-container iframe {
+    width: 100%;
+    min-height: 720px;
+    border: none;
+    display: block;
+    background: var(--bg-card);
+  }
+  .form-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* ====== UID HELP ====== */
+  .uid-help {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    border-top: 1px solid var(--line);
+  }
+  .uid-help h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .uid-help p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+  .uid-visual {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    padding: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 2;
+  }
+  .uid-visual .key { color: var(--gold); }
+  .uid-visual .hl {
+    background: rgba(212, 175, 55, 0.15);
+    border-left: 2px solid var(--gold);
+    padding: 4px 10px;
+    color: var(--ink);
+    display: block;
+    margin: 8px 0;
+  }
+
+  /* ====== WHY ====== */
+  .why {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+  .why-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+  }
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .why-list li {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .why-list li:last-child { border-bottom: none; }
+  .why-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .why-list h5 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .why-list p {
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  /* ====== CTA banner ====== */
+  .cta-banner {
+    margin: 80px 32px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    background:
+      radial-gradient(ellipse at center, rgba(212, 175, 55, 0.12) 0%, transparent 70%),
+      linear-gradient(135deg, #15100a, #1f1709);
+    border: 1px solid var(--line-strong);
+    padding: 80px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before, .cta-banner::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+  }
+  .cta-banner::before { top: -100px; left: -100px; }
+  .cta-banner::after { bottom: -100px; right: -100px; }
+  .cta-banner h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.1;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  .cta-banner h3 em { color: var(--gold); font-style: italic; }
+  .cta-banner p {
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ====== FAQ ====== */
+  .faq {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+  .faq-list {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-item summary {
+    padding: 28px 0;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    transition: color 0.3s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--gold); }
+  .faq-item summary::after {
+    content: '+';
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gold);
+    font-size: 24px;
+    transition: transform 0.3s;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item div.faq-body {
+    padding: 0 0 28px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-size: 15px;
+    max-width: 720px;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    padding: 80px 32px 40px;
+    border-top: 1px solid var(--line);
+    background: var(--bg-elev);
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-blurb {
+    max-width: 420px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 16px;
+  }
+  .footer-bottom {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+  }
+  .footer-bottom a { color: var(--gold); }
+
+  /* ====== reveal anim ====== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ====== Responsive ====== */
+  @media (max-width: 980px) {
+    .hero { padding: 60px 24px 40px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .preview-card { transform: none; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .uid-help { grid-template-columns: 1fr; gap: 32px; padding: 60px 24px; }
+    .why-inner { grid-template-columns: 1fr; gap: 32px; }
+    .cta-banner { padding: 56px 24px; margin: 60px 16px; }
+    .nav-inner { padding: 14px 20px; }
+    .brand-sub { display: none; }
+    .section-head { padding: 0 24px 32px; }
+  }
+  @media (max-width: 540px) {
+    .hero h1 { font-size: 44px; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-ghost { justify-content: center; }
+    .nav-cta { padding: 8px 14px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand">
+      <span class="brand-mark"><span>C</span></span>
+      <span>
+        <span class="brand-name">CRYPTOMEGA</span>
+        <span style="margin: 0 6px; color: var(--ink-mute);">×</span>
+        <span style="color: var(--ink);">Bitunix</span>
+        <div class="brand-sub">Accès VIP affiliés</div>
+      </span>
+    </a>
+    <a href="#form" class="nav-cta">Obtenir mes accès</a>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="hero-eyebrow">Réservé aux affiliés Bitunix</div>
+      <h1>
+        L'<em>edge quotidien</em><br />
+        <span class="gold-line">de TheAlgoBot</span><br />
+        dans ta boîte mail.
+      </h1>
+      <p class="lede">
+        Inscris-toi via notre lien partenaire Bitunix, active ton compte, puis envoie ton email et ton UID pour recevoir gratuitement <strong style="color: var(--gold);">la newsletter quotidienne TheAlgoBot</strong> — l'analyse de marché que je consulte moi-même avant chaque session.
+      </p>
+      <ul class="hero-bullets">
+        <li><span><strong>Macro & sentiment</strong> — DXY, SPX, VIX, Fear & Greed, FOMC watch</span></li>
+        <li><span><strong>Données dérivés</strong> — Funding rates, Open Interest, liquidations 24h</span></li>
+        <li><span><strong>Niveaux techniques</strong> — Pivots, EMA200, supports/résistances BTC & ETH</span></li>
+        <li><span><strong>Pari du jour</strong> — Direction, entry, target, invalidation + scoreboard public</span></li>
+      </ul>
+      <div class="cta-row">
+        <a href="[TON_LIEN_BITUNIX]" target="_blank" rel="noopener" class="btn-primary">Créer mon compte Bitunix</a>
+        <a href="#form" class="btn-ghost">Obtenir mes accès</a>
+      </div>
+      <div class="hero-fine">⚜ Accès gratuit · Réservé aux comptes inscrits via notre lien partenaire</div>
+    </div>
+
+    <!-- Newsletter preview -->
+    <div class="hero-visual reveal" style="transition-delay: 0.2s;">
+      <div class="preview-card">
+        <div class="preview-header">
+          <div class="preview-title">TheAlgoBot — Brief Matinal</div>
+          <div class="preview-date">14 MAY 2026</div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Marché</div>
+          <div class="preview-row"><span>BTC</span><span class="neg">$79,748 · -0.91%</span></div>
+          <div class="preview-row"><span>ETH</span><span class="neg">$2,267 · -1.25%</span></div>
+          <div class="preview-row"><span>DXY</span><span class="pos">$98.546 · +0.26%</span></div>
+          <div class="preview-row"><span>Fear & Greed</span><span class="neutral">34 / 100 — Peur</span></div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Liquidations 24h</div>
+          <div class="preview-row"><span>Total</span><span class="neutral">$20.4M</span></div>
+          <div class="preview-row"><span>Longs liquidés</span><span class="neg">65%</span></div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Niveaux BTC</div>
+          <div class="preview-row"><span>Pivot</span><span class="neutral">$79,798</span></div>
+          <div class="preview-row"><span>R1 · Résistance</span><span class="pos">$80,841</span></div>
+          <div class="preview-row"><span>S1 · Support</span><span class="neg">$78,271</span></div>
+        </div>
+
+        <div class="preview-bet">
+          <div class="preview-bet-label">⚡ PARI DU JOUR</div>
+          <div class="preview-bet-text">
+            <strong>SHORT BTC</strong> — Entry $79,834 · SL $81,000 · Target $78,271 (S1)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== STEPS ====== -->
+<section class="steps" id="steps">
+  <div class="section-head reveal">
+    <div class="section-num">— 01 / PROCESSUS</div>
+    <h2 class="section-title">Trois étapes pour <em>débloquer</em> ton accès.</h2>
+    <p class="section-sub">Le process est volontairement court. Inscription, activité, demande — c'est tout.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Crée ton compte Bitunix</h3>
+      <p>Inscris-toi exclusivement via notre lien partenaire pour être éligible à la newsletter VIP.</p>
+      <a href="[TON_LIEN_BITUNIX]" target="_blank" rel="noopener" class="step-link">S'inscrire sur Bitunix →</a>
+    </div>
+    <div class="step reveal" style="transition-delay: 0.1s;">
+      <div class="step-num">02</div>
+      <h3>Active ton compte</h3>
+      <p>Une activité réelle sur ton compte Bitunix (dépôt + premiers trades) est nécessaire pour valider ta demande.</p>
+    </div>
+    <div class="step reveal" style="transition-delay: 0.2s;">
+      <div class="step-num">03</div>
+      <h3>Envoie ton email + UID</h3>
+      <p>Remplis le formulaire ci-dessous : on vérifie ton éligibilité et tu reçois la newsletter chaque matin.</p>
+      <a href="#form" class="step-link">Vers le formulaire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== INSIDE NEWSLETTER ====== -->
+<section class="features">
+  <div class="section-head reveal">
+    <div class="section-num">— 02 / CE QUE TU REÇOIS</div>
+    <h2 class="section-title">Une <em>radiographie complète</em> du marché, chaque matin.</h2>
+    <p class="section-sub">Pas un résumé Twitter recyclé. Une vraie note de trading avec les data qui comptent — celles que je regarde moi-même avant d'ouvrir une position.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature reveal">
+      <div class="feature-icon">⚜</div>
+      <h4>Brief macro & sentiment</h4>
+      <p>BTC, ETH, DXY, SPX, GOLD, VIX. Indice Fear & Greed. Probabilités FOMC et taux implicites. Le contexte avant la lecture technique.</p>
+    </div>
+    <div class="feature reveal" style="transition-delay: 0.05s;">
+      <div class="feature-icon">⟁</div>
+      <h4>Funding · OI · Liquidations</h4>
+      <p>Funding rates Binance, Open Interest BTC/ETH, total liquidations 24h avec ratio longs/shorts. Pour lire le positionnement réel.</p>
+    </div>
+    <div class="feature reveal" style="transition-delay: 0.1s;">
+      <div class="feature-icon">◈</div>
+      <h4>Niveaux techniques jour</h4>
+      <p>Pivot, R1/R2, S1/S2, distance à l'EMA200 daily sur BTC et ETH. Les zones à surveiller dès l'ouverture européenne.</p>
+    </div>
+    <div class="feature reveal" style="transition-delay: 0.15s;">
+      <div class="feature-icon">⇄</div>
+      <h4>Whales · CME · Dominance</h4>
+      <p>Mouvements baleines BTC > 4 BTC, structure CME futures, BTC.D / ETH.D, signal altseason vs régime BTC leader.</p>
+    </div>
+    <div class="feature reveal" style="transition-delay: 0.2s;">
+      <div class="feature-icon">★</div>
+      <h4>Intelligence news</h4>
+      <p>News ranked par impact (★★★★★ → ★★☆) avec lecture bullish/bearish, séparées en catalyseurs directs et indirects.</p>
+    </div>
+    <div class="feature reveal" style="transition-delay: 0.25s;">
+      <div class="feature-icon">⚡</div>
+      <h4>Pari du jour + scoreboard</h4>
+      <p>Direction, entry, stop, target, invalidation. Avec un scoreboard public W/L. Pas de promesse, juste un track record qui s'écrit chaque jour.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FORM ====== -->
+<section class="form-section" id="form">
+  <div class="form-wrap">
+    <div class="section-num reveal">— 03 / DEMANDE D'ACCÈS</div>
+    <h2 class="section-title reveal">Demande ta <em>newsletter VIP</em>.</h2>
+    <p class="section-sub reveal">Remplis le formulaire après ton inscription via notre lien partenaire Bitunix et l'activation de ton compte. Tu recevras la newsletter après vérification de ton UID.</p>
+
+    <div class="form-container reveal">
+      <!-- 
+        =====================================================
+        REMPLACE l'URL src= par TON URL Google Form en mode "embed"
+        Comment l'obtenir :
+        1) Ouvre ton Google Form
+        2) Envoyer → onglet < > (Embed HTML)
+        3) Copie uniquement la valeur de src="..."
+        =====================================================
+      -->
+      <iframe 
+        src="[TON_GOOGLE_FORM_EMBED_URL]" 
+        title="Formulaire d'accès newsletter TheAlgoBot"
+        loading="lazy">
+        Chargement du formulaire…
+      </iframe>
+    </div>
+
+    <p class="form-note">⚜ Les informations sont utilisées uniquement pour vérifier ton éligibilité et t'envoyer ta newsletter quotidienne.</p>
+  </div>
+</section>
+
+<!-- ====== UID HELP ====== -->
+<section class="uid-help" id="uid">
+  <div class="reveal">
+    <div class="section-num">— 04 / TROUVER TON UID</div>
+    <h3>Tu ne sais pas où trouver ton <em style="color: var(--gold); font-style: italic;">UID Bitunix</em> ?</h3>
+    <p>L'UID (User ID) est ton identifiant unique sur Bitunix. Il sert à vérifier que tu es bien inscrit via notre lien partenaire.</p>
+    <a href="[TON_LIEN_BITUNIX]" target="_blank" rel="noopener" class="btn-ghost">Voir mon UID sur Bitunix →</a>
+  </div>
+  <div class="uid-visual reveal" style="transition-delay: 0.1s;">
+    <div><span class="key">▸</span> Connecte-toi sur Bitunix</div>
+    <div><span class="key">▸</span> Clique sur ton avatar (haut droit)</div>
+    <div><span class="key">▸</span> Tu vois ton UID juste sous ton pseudo</div>
+    <span class="hl">UID : 12345678</span>
+    <div style="margin-top: 12px; color: var(--ink-mute); font-size: 12px;">↑ Copie cette valeur dans le formulaire</div>
+  </div>
+</section>
+
+<!-- ====== WHY ====== -->
+<section class="why">
+  <div class="why-inner">
+    <div class="reveal">
+      <div class="section-num">— 05 / POURQUOI</div>
+      <h2 class="section-title">Pourquoi cet accès <em>change</em> ton routine de trade.</h2>
+      <p class="section-sub">L'objectif n'est pas de t'inonder. C'est de te faire gagner 45 minutes de scan chaque matin et de te donner un cadre de lecture cohérent.</p>
+    </div>
+    <ul class="why-list reveal" style="transition-delay: 0.1s;">
+      <li>
+        <span class="why-mark">i</span>
+        <div>
+          <h5>Tu lis le contexte avant le prix</h5>
+          <p>Funding, OI, liquidations et macro te disent <em>pourquoi</em> ça bouge. Plus tu lis le contexte, moins tu rentres dans des setups morts.</p>
+        </div>
+      </li>
+      <li>
+        <span class="why-mark">ii</span>
+        <div>
+          <h5>Tu gagnes du temps réel</h5>
+          <p>Les niveaux techniques BTC/ETH sont déjà calculés. Les news sont déjà rankées. Tu ouvres ta plateforme avec un plan, pas avec 12 onglets.</p>
+        </div>
+      </li>
+      <li>
+        <span class="why-mark">iii</span>
+        <div>
+          <h5>Tu vois un trader honnête</h5>
+          <p>Le pari du jour est tracké publiquement. Les pertes sont affichées comme les gains. Pas de "j'avais dit" rétroactif — un scoreboard, point.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====== CTA banner ====== -->
+<section>
+  <div class="cta-banner reveal">
+    <div class="section-num" style="text-align: center;">— PAS ENCORE INSCRIT ?</div>
+    <h3>Crée ton compte Bitunix maintenant pour <em>devenir éligible</em>.</h3>
+    <p>L'inscription est gratuite. La newsletter aussi. La seule condition : passer par notre lien partenaire.</p>
+    <a href="[TON_LIEN_BITUNIX]" target="_blank" rel="noopener" class="btn-primary">Créer mon compte Bitunix</a>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="faq">
+  <div class="section-head reveal">
+    <div class="section-num">— 06 / FAQ</div>
+    <h2 class="section-title">Questions <em>fréquentes</em>.</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>Qui peut demander l'accès à la newsletter ?</summary>
+      <div class="faq-body">L'accès est strictement réservé aux utilisateurs inscrits via notre lien partenaire Bitunix et disposant d'une activité réelle sur leur compte (dépôt + trades).</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Qu'est-ce que je reçois exactement ?</summary>
+      <div class="faq-body">La newsletter quotidienne TheAlgoBot, envoyée chaque matin. Elle contient : brief macro, funding rates & OI, liquidations 24h, niveaux techniques BTC/ETH, news classées par impact, pari du jour avec scoreboard, et un édito de marché.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Pourquoi demandez-vous mon UID Bitunix ?</summary>
+      <div class="faq-body">L'UID nous permet de vérifier que ton compte a bien été créé via notre lien partenaire. C'est la seule façon de valider ton éligibilité aux accès VIP.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Je suis déjà inscrit sur Bitunix sans votre lien, puis-je quand même recevoir la newsletter ?</summary>
+      <div class="faq-body">Non. L'accès est exclusivement réservé aux affiliés inscrits via notre lien. Si tu as déjà un compte, tu peux soit en créer un nouveau via notre lien partenaire, soit contacter le support Bitunix pour rattacher ton compte (selon leurs conditions).</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Combien de temps pour recevoir la newsletter ?</summary>
+      <div class="faq-body">Après vérification de ton éligibilité (24-72h en général), tu es ajouté à la liste de diffusion et tu commences à recevoir la newsletter dès le lendemain matin.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Est-ce que c'est du conseil en investissement ?</summary>
+      <div class="faq-body">Non. La newsletter TheAlgoBot est un outil d'analyse de marché à but informatif et éducatif. Le pari du jour est public et tracké, mais ce n'est pas une recommandation personnalisée. Tu restes seul responsable de tes décisions de trading.</div>
+    </details>
+    <details class="faq-item reveal">
+      <summary>Est-ce que c'est payant ?</summary>
+      <div class="faq-body">Non, l'accès à la newsletter est totalement gratuit pour les affiliés Bitunix. Mon revenu provient du partenariat Bitunix — l'idée est simple : tu trades sur Bitunix, je peux te fournir des ressources de qualité en échange.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="brand">
+          <span class="brand-mark"><span>C</span></span>
+          <span>
+            <span class="brand-name">CRYPTOMEGA</span>
+            <span style="margin: 0 6px; color: var(--ink-mute);">×</span>
+            <span style="color: var(--ink);">Bitunix</span>
+          </span>
+        </a>
+        <p class="footer-blurb">
+          CRYPTOMEGA est une éducation au trading crypto fondée par Mathieu, trader actif depuis 2016. Cette page est dédiée aux affiliés Bitunix qui souhaitent accéder à la newsletter quotidienne TheAlgoBot.
+        </p>
+      </div>
+      <div>
+        <a href="[TON_LIEN_BITUNIX]" target="_blank" rel="noopener" class="btn-primary">Créer mon compte Bitunix</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 CRYPTOMEGA. Tous droits réservés.</div>
+      <div>Le trading comporte un risque de perte en capital. Cette page n'est pas un conseil en investissement.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
