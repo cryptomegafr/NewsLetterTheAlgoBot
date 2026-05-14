@@ -932,9 +932,213 @@
     .btn-primary, .btn-ghost { justify-content: center; }
     .nav-cta { padding: 8px 14px; font-size: 13px; }
   }
+
+  /* ====== ANIMATIONS ====== */
+
+  /* --- 1. Floating gold particles --- */
+  .particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-up linear infinite;
+    box-shadow: 0 0 8px var(--gold), 0 0 12px rgba(212, 175, 55, 0.4);
+  }
+  @keyframes float-up {
+    0% {
+      opacity: 0;
+      transform: translateY(0) translateX(0);
+    }
+    10% { opacity: 0.6; }
+    50% {
+      transform: translateY(-50vh) translateX(30px);
+    }
+    90% { opacity: 0.4; }
+    100% {
+      opacity: 0;
+      transform: translateY(-100vh) translateX(-20px);
+    }
+  }
+
+  /* --- 2. Hero title word reveal --- */
+  .hero h1 .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(8px);
+    animation: word-reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes word-reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  /* --- 3. Preview "live" pulse --- */
+  .preview-card {
+    animation: live-pulse 4s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    0%, 100% {
+      box-shadow: var(--shadow-gold), inset 0 1px 0 rgba(212, 175, 55, 0.1), 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+    50% {
+      box-shadow: var(--shadow-gold), inset 0 1px 0 rgba(212, 175, 55, 0.1), 0 0 30px -5px rgba(212, 175, 55, 0.25);
+    }
+  }
+
+  /* --- 4. Preview LIVE badge --- */
+  .preview-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: #e57373;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .preview-live::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #e57373;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #e57373;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* --- 5. Ticker prices animation --- */
+  .ticker-value {
+    transition: color 0.6s ease, transform 0.4s ease;
+    display: inline-block;
+  }
+  .ticker-value.flash-up {
+    color: #81c784 !important;
+    transform: translateY(-2px);
+  }
+  .ticker-value.flash-down {
+    color: #e57373 !important;
+    transform: translateY(2px);
+  }
+
+  /* --- 6. Card 3D hover (tilt) --- */
+  .step, .feature {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s, background 0.3s, box-shadow 0.4s;
+    will-change: transform;
+  }
+  .step::before, .feature::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      300px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(212, 175, 55, 0.12),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  .step:hover::before, .feature:hover::before {
+    opacity: 1;
+  }
+  .step:hover, .feature:hover {
+    border-color: var(--gold) !important;
+    box-shadow: 0 20px 50px -20px rgba(212, 175, 55, 0.3);
+  }
+  .feature {
+    position: relative;
+  }
+
+  /* --- 7. Animated counter (Pourquoi section) --- */
+  .stats-banner {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 28px;
+    background: rgba(212, 175, 55, 0.04);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--gold);
+  }
+  .stat-item {
+    text-align: left;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  /* --- 8. Brand mark gentle pulse --- */
+  .brand-mark {
+    animation: brand-pulse 4s ease-in-out infinite;
+  }
+  @keyframes brand-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+    50% { box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.08); }
+  }
+
+  /* --- 9. Scroll-triggered fade for ticker rows --- */
+  .preview-row {
+    transition: background 0.3s;
+  }
+  .preview-row:hover {
+    background: rgba(212, 175, 55, 0.04);
+  }
+
+  /* --- 10. Smooth section transitions --- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .particle { display: none; }
+  }
+
+  /* --- Responsive stats banner --- */
+  @media (max-width: 600px) {
+    .stats-banner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .stat-num { font-size: 36px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Floating gold particles -->
+<div class="particles" id="particles" aria-hidden="true"></div>
 
 <!-- ====== NAV ====== -->
 <nav class="nav">
@@ -957,10 +1161,10 @@
   <div class="hero-grid">
     <div class="reveal">
       <div class="hero-eyebrow">Réservé aux affiliés Bitunix</div>
-      <h1>
-        L'<em>edge quotidien</em><br />
-        <span class="gold-line">de TheAlgoBot</span><br />
-        dans ta boîte mail.
+      <h1 id="heroTitle">
+        <span class="word">L'</span><em><span class="word">edge</span> <span class="word">quotidien</span></em><br />
+        <span class="gold-line"><span class="word">de</span> <span class="word">TheAlgoBot</span></span><br />
+        <span class="word">dans</span> <span class="word">ta</span> <span class="word">boîte</span> <span class="word">mail.</span>
       </h1>
       <p class="lede">
         Inscris-toi via notre lien partenaire Bitunix, active ton compte, puis envoie ton email et ton UID pour recevoir gratuitement <strong style="color: var(--gold);">la newsletter TheAlgoBot</strong> chaque matin à 8h, du lundi au vendredi — l'analyse de marché que je consulte moi-même avant chaque session.
@@ -983,13 +1187,16 @@
       <div class="preview-card">
         <div class="preview-header">
           <div class="preview-title">TheAlgoBot — Brief Matinal</div>
-          <div class="preview-date">14 MAY 2026</div>
+          <div>
+            <span class="preview-live">Live</span>
+            <span class="preview-date">14 MAY 2026</span>
+          </div>
         </div>
 
         <div class="preview-section">
           <div class="preview-label">Marché</div>
-          <div class="preview-row"><span>BTC</span><span class="neg">$79,748 · -0.91%</span></div>
-          <div class="preview-row"><span>ETH</span><span class="neg">$2,267 · -1.25%</span></div>
+          <div class="preview-row"><span>BTC</span><span class="neg ticker-value" data-ticker="btc" data-base="79748">$79,748 · -0.91%</span></div>
+          <div class="preview-row"><span>ETH</span><span class="neg ticker-value" data-ticker="eth" data-base="2267">$2,267 · -1.25%</span></div>
           <div class="preview-row"><span>DXY</span><span class="pos">$98.546 · +0.26%</span></div>
           <div class="preview-row"><span>Fear & Greed</span><span class="neutral">34 / 100 — Peur</span></div>
         </div>
@@ -1171,6 +1378,21 @@
       <div class="section-num">— 05 / POURQUOI</div>
       <h2 class="section-title">Pourquoi cet accès <em>change</em> ta routine de trade.</h2>
       <p class="section-sub">L'objectif n'est pas de t'inonder. C'est de te faire gagner 45 minutes de scan chaque matin et de te donner un cadre de lecture cohérent.</p>
+
+      <div class="stats-banner">
+        <div class="stat-item">
+          <span class="stat-num" data-count="655" data-suffix="+">0</span>
+          <span class="stat-label">Trades trackés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="45" data-suffix=" min">0</span>
+          <span class="stat-label">Scan évité / matin</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="9" data-suffix=" ans">0</span>
+          <span class="stat-label">Track record</span>
+        </div>
+      </div>
     </div>
     <ul class="why-list reveal" style="transition-delay: 0.1s;">
       <li>
@@ -1286,6 +1508,149 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ====== ANIMATIONS ======
+
+  // --- 1. Floating gold particles ---
+  (function initParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    // Skip on small screens to save perf
+    if (window.innerWidth < 600) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const PARTICLE_COUNT = 18;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const p = document.createElement('span');
+      p.className = 'particle';
+      const size = 1 + Math.random() * 2.5;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.bottom = '-10px';
+      p.style.animationDuration = (15 + Math.random() * 25) + 's';
+      p.style.animationDelay = (Math.random() * 20) + 's';
+      container.appendChild(p);
+    }
+  })();
+
+  // --- 2. Hero title word-by-word reveal ---
+  (function heroReveal() {
+    const words = document.querySelectorAll('#heroTitle .word');
+    words.forEach((w, i) => {
+      w.style.animationDelay = (0.15 + i * 0.08) + 's';
+    });
+  })();
+
+  // --- 3. Ticker prices (subtle live variations) ---
+  (function initTicker() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const tickers = document.querySelectorAll('.ticker-value[data-ticker]');
+    const state = {};
+    tickers.forEach(t => {
+      const id = t.dataset.ticker;
+      state[id] = {
+        el: t,
+        base: parseFloat(t.dataset.base),
+        current: parseFloat(t.dataset.base),
+        pct: parseFloat(t.textContent.match(/(-?\d+\.\d+)%/)?.[1] || '0')
+      };
+    });
+
+    function formatPrice(val, ticker) {
+      if (ticker === 'btc') {
+        return '$' + Math.round(val).toLocaleString('en-US');
+      }
+      if (ticker === 'eth') {
+        return '$' + Math.round(val).toLocaleString('en-US');
+      }
+      return '$' + val.toFixed(2);
+    }
+
+    function tick() {
+      Object.keys(state).forEach(id => {
+        const s = state[id];
+        // Tiny random walk : +/- 0.05% max
+        const variation = (Math.random() - 0.5) * 0.001 * s.base;
+        s.current += variation;
+        // Anchor toward base to avoid drift
+        s.current += (s.base - s.current) * 0.05;
+
+        const newPct = s.pct + ((s.current - s.base) / s.base) * 100;
+        const direction = variation >= 0 ? 'flash-up' : 'flash-down';
+
+        s.el.classList.remove('flash-up', 'flash-down');
+        // Force reflow to restart transition
+        void s.el.offsetWidth;
+        s.el.classList.add(direction);
+
+        s.el.textContent = formatPrice(s.current, id) + ' · ' + newPct.toFixed(2) + '%';
+
+        setTimeout(() => {
+          s.el.classList.remove('flash-up', 'flash-down');
+        }, 600);
+      });
+    }
+
+    setInterval(tick, 3500);
+  })();
+
+  // --- 4. 3D card tilt on hover ---
+  (function init3DCards() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return; // skip touch devices
+
+    const cards = document.querySelectorAll('.step, .feature');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        const rotateY = ((x - cx) / cx) * 6;
+        const rotateX = -((y - cy) / cy) * 6;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  })();
+
+  // --- 5. Animated counters ---
+  (function initCounters() {
+    const counters = document.querySelectorAll('.stat-num[data-count]');
+    if (!counters.length) return;
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
+
+        function animate(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(target * eased);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+  })();
 
   // ====== FORM SUBMISSION TO GOOGLE FORMS (background) ======
   const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf2oMeQn2ZLaRf1qupOXtDwchhQGd3JDhm3g1DLjC6Aa9cIDw/formResponse';
