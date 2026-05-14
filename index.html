@@ -531,6 +531,155 @@
     display: block;
     background: var(--bg-card);
   }
+
+  /* ====== CUSTOM FORM ====== */
+  .custom-form {
+    text-align: left;
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .form-field label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .form-field label .req {
+    color: var(--gold-bright);
+    margin-left: 2px;
+  }
+  .form-field label .opt {
+    color: var(--ink-mute);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    font-size: 10px;
+  }
+  .form-field input {
+    background: rgba(10, 8, 5, 0.6);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    transition: all 0.3s;
+    outline: none;
+    border-radius: 0;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  .form-field input::placeholder {
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  .form-field input:hover {
+    border-color: var(--line-strong);
+    background: rgba(10, 8, 5, 0.8);
+  }
+  .form-field input:focus {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.04);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
+  }
+  .form-field input:invalid:not(:placeholder-shown) {
+    border-color: rgba(229, 115, 115, 0.5);
+  }
+  .field-hint {
+    font-size: 12px;
+    color: var(--ink-mute);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+  .form-submit {
+    margin-top: 12px;
+    background: var(--gold);
+    color: #0a0805;
+    border: 1px solid var(--gold);
+    padding: 18px 32px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .form-submit:hover:not(:disabled) {
+    background: var(--gold-bright);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.35);
+  }
+  .form-submit:hover:not(:disabled) .submit-arrow {
+    transform: translateX(4px);
+  }
+  .form-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .submit-arrow {
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .form-submit.loading .submit-label::after {
+    content: '...';
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+    animation: dots 1.4s infinite;
+  }
+  @keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+  }
+  .form-status {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0;
+    text-align: center;
+    transition: all 0.4s;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .form-status.show {
+    max-height: 300px;
+    padding: 20px;
+  }
+  .form-status.success {
+    background: rgba(129, 199, 132, 0.08);
+    border: 1px solid rgba(129, 199, 132, 0.3);
+    color: #b9e4bd;
+  }
+  .form-status.error {
+    background: rgba(229, 115, 115, 0.08);
+    border: 1px solid rgba(229, 115, 115, 0.3);
+    color: #f0b8b8;
+  }
+  .form-status .status-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: inherit;
+  }
+
+  @media (max-width: 540px) {
+    .custom-form { padding: 28px 24px; }
+  }
   .form-note {
     margin-top: 24px;
     font-size: 13px;
@@ -946,21 +1095,52 @@
     <p class="section-sub reveal">Remplis le formulaire après ton inscription via notre lien partenaire Bitunix et l'activation de ton compte. Tu recevras la newsletter après vérification de ton UID.</p>
 
     <div class="form-container reveal">
-      <!-- 
-        =====================================================
-        REMPLACE l'URL src= par TON URL Google Form en mode "embed"
-        Comment l'obtenir :
-        1) Ouvre ton Google Form
-        2) Envoyer → onglet < > (Embed HTML)
-        3) Copie uniquement la valeur de src="..."
-        =====================================================
-      -->
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSf2oMeQn2ZLaRf1qupOXtDwchhQGd3JDhm3g1DLjC6Aa9cIDw/viewform?embedded=true" 
-        title="Formulaire d'accès newsletter TheAlgoBot"
-        loading="lazy">
-        Chargement du formulaire…
-      </iframe>
+      <form id="vipForm" class="custom-form" novalidate>
+        <div class="form-field">
+          <label for="email">Ton adresse email <span class="req">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ton.email@exemple.com"
+            required
+            autocomplete="email"
+          />
+          <span class="field-hint">Tu recevras la newsletter chaque matin à 8h sur cette adresse.</span>
+        </div>
+
+        <div class="form-field">
+          <label for="uid">Ton UID Bitunix <span class="req">*</span></label>
+          <input
+            type="text"
+            id="uid"
+            name="uid"
+            placeholder="12345678"
+            required
+            inputmode="numeric"
+            pattern="[0-9]+"
+          />
+          <span class="field-hint">Numéro à plusieurs chiffres, visible sur ton compte Bitunix.</span>
+        </div>
+
+        <div class="form-field">
+          <label for="pseudo">Ton pseudo Twitter ou Discord <span class="opt">— optionnel</span></label>
+          <input
+            type="text"
+            id="pseudo"
+            name="pseudo"
+            placeholder="@cryptomega ou MathieuTrader#1234"
+          />
+          <span class="field-hint">Pour qu'on te reconnaisse dans la communauté.</span>
+        </div>
+
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="submit-label">Envoyer ma demande d'accès</span>
+          <span class="submit-arrow">→</span>
+        </button>
+
+        <div class="form-status" id="formStatus" aria-live="polite"></div>
+      </form>
     </div>
 
     <p class="form-note">⚜ Les informations sont utilisées uniquement pour vérifier ton éligibilité et t'envoyer ta newsletter quotidienne.</p>
@@ -1106,6 +1286,82 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ====== FORM SUBMISSION TO GOOGLE FORMS (background) ======
+  const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf2oMeQn2ZLaRf1qupOXtDwchhQGd3JDhm3g1DLjC6Aa9cIDw/formResponse';
+  const FIELD_EMAIL = 'entry.984182270';
+  const FIELD_UID = 'entry.751821035';
+  const FIELD_PSEUDO = 'entry.1134393088';
+
+  const vipForm = document.getElementById('vipForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+
+  vipForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const uid = document.getElementById('uid').value.trim();
+    const pseudo = document.getElementById('pseudo').value.trim();
+
+    // Client-side validation
+    if (!email || !uid) {
+      showStatus('error', 'Champs manquants', 'Merci de remplir l\'email et l\'UID Bitunix.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showStatus('error', 'Email invalide', 'Vérifie le format de ton adresse email.');
+      return;
+    }
+    if (!/^\d+$/.test(uid)) {
+      showStatus('error', 'UID invalide', 'L\'UID Bitunix doit contenir uniquement des chiffres.');
+      return;
+    }
+
+    // Loading state
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    formStatus.classList.remove('show', 'success', 'error');
+
+    // Build form data for Google
+    const formData = new FormData();
+    formData.append(FIELD_EMAIL, email);
+    formData.append(FIELD_UID, uid);
+    if (pseudo) formData.append(FIELD_PSEUDO, pseudo);
+
+    try {
+      // Google Forms returns CORS error but still processes the submission
+      // Using no-cors mode means we can't read the response, but submission works
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
+
+      // Since no-cors blocks response reading, we assume success after the request completes
+      showStatus(
+        'success',
+        'Demande enregistrée ✓',
+        'Merci ! On vérifie que ton UID est bien lié à notre lien partenaire Bitunix. Tu recevras la newsletter quotidienne TheAlgoBot dans ta boîte mail sous 24 à 72h, du lundi au vendredi à 8h.'
+      );
+      vipForm.reset();
+    } catch (err) {
+      showStatus(
+        'error',
+        'Erreur d\'envoi',
+        'Une erreur est survenue. Réessaye dans quelques instants, ou contacte-nous directement sur Discord.'
+      );
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('loading');
+    }
+  });
+
+  function showStatus(type, title, message) {
+    formStatus.className = 'form-status show ' + type;
+    formStatus.innerHTML = '<span class="status-title">' + title + '</span>' + message;
+    formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 </script>
 
 </body>
